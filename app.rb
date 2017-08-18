@@ -17,24 +17,24 @@ get '/confirmation' do
 end	
 
 post '/resultsroute' do
-	topping = params[:topping1].to_s
+	topping = params[:topping].to_s
 	erb :resultsroute
-	redirect '/results?topping1=' + topping1
+	redirect '/results?topping=' + topping
 end
 # post '/confirmation' do
-# 	topping1 = params[:topping1].to_s
+# 	topping = params[:topping].to_s
 # 	erb :results
-# 	redirect '/results?topping1=' + topping1
+# 	redirect '/results?topping=' + topping
 # end	
 
 get '/results' do
-	topping1 = params[topping1].to_a
-	erb :results, :locals => {:topping1=>topping1}
+	topping = params[:topping].split
+	erb :results, :locals => {:topping=>topping}
 end	
 # post '/results' do
-# 	topping1 = params[:topping1].to_s
+# 	topping = params[:topping].to_s
 # 	erb :resultsroute
-# 	redirect '/results?topping1=' + topping1
+# 	redirect '/results?topping=' + topping
 # end
 
 
